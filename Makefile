@@ -6,7 +6,7 @@
 #    By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 13:10:08 by vhaefeli          #+#    #+#              #
-#    Updated: 2022/05/18 10:10:30 by vhaefeli         ###   ########.fr        #
+#    Updated: 2022/06/20 14:36:46 by vhaefeli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ TARGET 			= pipex
 SRCS_DIR 		= ./src
 OBJS_DIR 		= ./obj
 _SRCS 			= pipex.c
+					
 
 OBJS 			= $(patsubst %.c, $(OBJS_DIR)/%.o, $(_SRCS))
 SRCS 			= $(patsubst %, $(SRCS_DIR)/%, $(_SRCS))
@@ -40,7 +41,7 @@ $(OBJS_DIR):
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
 	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
 
-$(TARGET):
+$(TARGET):  $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o
 
 $(MINILIBX_DIR)/libmlx.a:
