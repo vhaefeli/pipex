@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:32:32 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/20 22:58:03 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/21 11:14:30 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,25 @@ char	**split_flags(char *cmds)
 void	pipex(char **argv, char **paths, char **envp)
 {
 	pid_t	pid1;
-	pid_t	pid2;
 	int		fd[2];
+	int		n_cmd;
 	int		status;
 
+	n_cmd = 1;
 	if (pipe(fd) == -1)
 		return ;
-	pid1 = fork();
-	if (pid1 < 0)
-		return (perror("Fork1: "));
-	if (pid1 == 0)
+	while (argv[n_cmd + 3])
 	{
-		first_child_process(argv, paths, fd, envp);
+		pid1 = fork();
+		if (pid1 < 0)
+			return (perror("Fork1: "));
+		if (pid1 == 0)
+		{
+			child_pro(n_cmd, argv, paths, fd, envp);
+		}
+		waitpid(pid1, &status, 0);
+		n_cmd++;
 	}
-	pid2 = fork();
-	if (pid2 < 0)
-		return (perror("Fork2: "));
-	if (pid2 == 0)
-		scd_child_process(argv, paths, fd, envp);
 	close(fd[0]);
 	close(fd[1]);
-	waitpid(pid1, &status, 0);
-	waitpid(pid2, &status, 0);
 }
