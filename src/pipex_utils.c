@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:32:32 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 11:14:30 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:46:16 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 void	exec_cmd(char **paths, char *first_cmd, char **envp, char **flags)
 {
@@ -44,25 +44,26 @@ char	**split_flags(char *cmds)
 
 void	pipex(char **argv, char **paths, char **envp)
 {
-	pid_t	pid1;
-	int		fd[2];
-	int		n_cmd;
-	int		status;
+	pid_t			pid1;
+	int				fd[2];
+	t_cmd_arg		cmdlist;
+	int				status;
 
-	n_cmd = 1;
+	cmdlist.cmd_argv = argv;
+	cmdlist.n_cmd = 1;
 	if (pipe(fd) == -1)
 		return ;
-	while (argv[n_cmd + 3])
+	while (argv[cmdlist.n_cmd + 3])
 	{
 		pid1 = fork();
 		if (pid1 < 0)
 			return (perror("Fork1: "));
 		if (pid1 == 0)
 		{
-			child_pro(n_cmd, argv, paths, fd, envp);
+			child_process(cmdlist, paths, fd, envp);
 		}
 		waitpid(pid1, &status, 0);
-		n_cmd++;
+		cmdlist.n_cmd++;
 	}
 	close(fd[0]);
 	close(fd[1]);

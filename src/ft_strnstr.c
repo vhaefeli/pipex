@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vhaefeli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:40:49 by vhaefeli          #+#    #+#             */
-/*   Updated: 2021/10/21 13:48:52 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:43:05 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -35,6 +35,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 		max--;
-	}	
+	}
 	return (NULL);
 }

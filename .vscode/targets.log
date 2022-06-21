@@ -1,0 +1,567 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Tue Jun 21 14:45:41 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from `Makefile', line 15)
+TARGET = pipex
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `Makefile', line 20)
+INCLUDES = $(addprefix -I,$(INCLUDES_DIRS))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/vhaefeli/rank02/pipex
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 14)
+CFLAGS = -Wall -Wextra -Werror -g 
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 35)
+SRCS = $(patsubst %, $(SRCS_DIR)/%, $(_SRCS))
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from `Makefile', line 34)
+OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(_SRCS))
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_ph0032nm/T/vscode-ipc-2e00ac0c-acff-4997-b92e-c2bb01bc0721.sock
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /Users/vhaefeli/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 21)
+_SRCS = ft_strjoin.c ft_strlcpy.c ft_strlen.c ft_strnstr.c ft_substr.c ft_split.c ft_printf.c path_finder.c pipex_checkarg.c pipex_children_process.c pipex_utils.c pipex.c
+# environment
+LaunchInstanceID = D3B565CF-8376-49B6-923C-E655269AD5D4
+# makefile (from `Makefile', line 16)
+SRCS_DIR = ./src
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.UZk5IqIjLV/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+HOMEBREW_TEMP = /tmp/vhaefeli/Homebrew/Temp
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/vhaefeli/rank02/pipex
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 19)
+INCLUDES_DIRS = ./includes
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/vhaefeli
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/vhaefeli/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LOGNAME = vhaefeli
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/vhaefeli/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+HOMEBREW_CACHE = /tmp/vhaefeli/Homebrew/Caches
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = vhaefeli
+# makefile
+.DEFAULT_GOAL := all
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000c_ph0032nm/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/vhaefeli/Library/Application Support/Code/1.67.2-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+# makefile (from `Makefile', line 17)
+OBJS_DIR = ./obj
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x18AB4:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a7
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 606
+# variable set hash-table stats:
+# Load=78/1024=8%, Rehash=0, Collisions=5/113=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777225, inode 2485474): 10 files, no impossibilities.
+# src (device 16777225, inode 2671756): 14 files, no impossibilities so far.
+
+# 24 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+obj/%.o: ./src/%.c | ./obj
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+obj/ft_strlcpy.o: src/ft_strlcpy.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strlcpy'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+# Not a target:
+src/pipex_checkarg.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:50:57
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/pipex_utils.o: src/pipex_utils.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `pipex_utils'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+all: pipex
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
+
+.PHONY: all clean fclean re bonus test norminette
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/ft_substr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:43:25
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/pipex_children_process.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:58:02
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/ft_strnstr.o: src/ft_strnstr.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strnstr'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+# Not a target:
+src/ft_strlcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:42:45
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 14:44:51
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+test:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+src/pipex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:28:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/pipex_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 14:01:20
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/ft_strnstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:43:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/ft_strlen.o: src/ft_strlen.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strlen'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+bonus: pipex
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 46):
+	rm -f $(TARGET)
+	
+
+norminette:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	@norminette $(SRCS_DIR)
+	
+
+obj/path_finder.o: src/path_finder.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `path_finder'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+obj:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-21 14:44:56
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 51):
+	@mkdir -p $@
+	
+
+obj/ft_strjoin.o: src/ft_strjoin.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_strjoin'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+obj/ft_split.o: src/ft_split.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_split'
+#  Last modified 2022-06-21 14:44:56
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+obj/ft_printf.o: src/ft_printf.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_printf'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 42):
+	rm -f $(OBJS)
+	rm -df $(OBJS_DIR)
+	
+
+# Not a target:
+src/ft_strlen.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 11:17:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/pipex_children_process.o: src/pipex_children_process.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `pipex_children_process'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+obj/pipex_checkarg.o: src/pipex_checkarg.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `pipex_checkarg'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+# Not a target:
+src/ft_strjoin.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:42:33
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/ft_split.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:42:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/ft_printf.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-21 10:38:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/pipex.o: src/pipex.c | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `pipex'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+# Not a target:
+src/path_finder.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-21 13:47:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/ft_substr.o: src/ft_substr.c | obj
+ 
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_substr'
+#  Last modified 2022-06-21 14:44:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
+	
+
+pipex: obj/ft_strjoin.o obj/ft_strlcpy.o obj/ft_strlen.o obj/ft_strnstr.o obj/ft_substr.o obj/ft_split.o obj/ft_printf.o obj/path_finder.o obj/pipex_checkarg.o obj/pipex_children_process.o obj/pipex_utils.o obj/pipex.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-21 14:44:56
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 57):
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INCLUDES)
+	
+
+# files hash-table stats:
+# Load=37/1024=4%, Rehash=0, Collisions=12/134=9%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Tue Jun 21 14:45:41 2022
+
+ 

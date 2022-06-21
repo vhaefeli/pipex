@@ -6,9 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 22:02:58 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/19 22:04:39 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:47:22 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/pipex.h"
 
 char	**path_finder(char **envp)
 {

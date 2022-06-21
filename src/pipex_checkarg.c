@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 22:07:23 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/20 15:19:45 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:50:57 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "..\includes\pipex.h"
+#include "../includes/pipex.h"
 
 void	check_nbargv(int argc)
 {
