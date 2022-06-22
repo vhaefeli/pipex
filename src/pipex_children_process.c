@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:17:40 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:58:02 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:07:39 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,17 @@ int	check_infile(char **argv, int fd[], int n_cmd)
 
 int	check_outfile(char **argv, int fd[], int n_cmd)
 {
+	int outfile;
+
 	if (argv[n_cmd + 3] == NULL)
 	{
-		return (open(argv[n_cmd + 2], O_WRONLY));
+		outfile = open(argv[n_cmd + 2], O_CREAT | O_RDWR | O_TRUNC, 0644);
+		if (access(argv[n_cmd + 2], W_OK) != 0)
+		{
+			ft_printf("(Error) %s : %s \n", strerror(errno), argv[n_cmd + 2]);
+			exit(EXIT_FAILURE);
+		}
+		return (outfile);
 	}
 	else return (fd[1]);
 }
@@ -48,8 +56,9 @@ void	child_process(t_cmd_arg cmdlist, char **paths, int fd[], char **envp)
 	}
 	flags = split_flags(cmdlist.cmd_argv[cmdlist.n_cmd + 1]);
 	cmd = ft_strjoin("/", flags[0]);
-	close(fd[0]);
 	dup2(infile, STDIN_FILENO);
 	dup2(outfile, STDOUT_FILENO);
+	close(fd[0]);
+	close(fd[1]);
 	exec_cmd(paths, cmd, envp, flags);
 }

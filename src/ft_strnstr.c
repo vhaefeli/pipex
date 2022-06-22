@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:40:49 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:43:05 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

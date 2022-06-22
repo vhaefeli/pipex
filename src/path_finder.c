@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 22:02:58 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:47:22 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 char	**path_finder(char **envp)
 {
@@ -19,7 +19,7 @@ char	**path_finder(char **envp)
 	char	**all_path;
 
 	i = 0;
-	while (envp[i] && (ft_strnstr(envp[i], "PATH", 5) == NULL))
+	while (envp[i] && (ft_strnstr(envp[i], "PATH=", 5) == NULL))
 		i++;
 	if (envp[i] == NULL)
 	{

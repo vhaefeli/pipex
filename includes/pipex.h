@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:04 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:52:05 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:05:18 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_printf(const char *src, ...);
 char	**path_finder(char ** envp);
 
 void	check_nbargv(int argc);
-void	check_files(int argc, char **argv);
+void	check_file(char **argv);
 
 int	check_infile(char **argv, int fd[], int n_cmd);
 int	check_outfile(char **argv, int fd[], int n_cmd);

@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 11:01:38 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:43:25 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

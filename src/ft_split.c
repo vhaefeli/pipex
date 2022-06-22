@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 11:20:35 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:42:26 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 static size_t	ft_cntline(const char *s, char c)
 {

@@ -6,10 +6,9 @@
 #    By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 13:10:08 by vhaefeli          #+#    #+#              #
-#    Updated: 2022/06/21 14:44:51 by vhaefeli         ###   ########.fr        #
+#    Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CFLAGS 			= -Wall -Wextra -Werror -g #-fsanitize=address -fno-omit-frame-pointer
 TARGET 			= pipex

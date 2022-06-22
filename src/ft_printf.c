@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vhaefeli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:50:59 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/04/21 10:38:18 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:41:05 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdarg.h>
 
@@ -42,7 +43,7 @@ static void	ft_printnb_base(unsigned int nb, int nbase, int *n)
 }
 
 static void	ft_dealtype(va_list ap, char type, int *n)
-{	
+{
 	int	nb;
 
 	if (type == 's')

@@ -6,11 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:10:30 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 13:28:19 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "pipex.h"
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -20,7 +20,7 @@ int	main(int argc, char **argv, char **envp)
 	i = 0;
 	paths = path_finder(envp);
 	check_nbargv(argc);
-	check_files(argc, argv);
+	check_file(argv);
 	pipex(argv, paths, envp);
 	while (paths[i])
 	{
