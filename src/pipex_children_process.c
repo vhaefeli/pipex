@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:17:40 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 14:07:39 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:14:47 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ int	check_infile(char **argv, int fd[], int n_cmd)
 	{
 		return (open(argv[1], O_RDONLY));
 	}
-	else return (fd[0]);
+	else
+		return (fd[0]);
 }
 
 int	check_outfile(char **argv, int fd[], int n_cmd)
 {
-	int outfile;
+	int	outfile;
 
 	if (argv[n_cmd + 3] == NULL)
 	{
@@ -35,7 +36,8 @@ int	check_outfile(char **argv, int fd[], int n_cmd)
 		}
 		return (outfile);
 	}
-	else return (fd[1]);
+	else
+		return (fd[1]);
 }
 
 void	child_process(t_cmd_arg cmdlist, char **paths, int fd[], char **envp)

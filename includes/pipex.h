@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:04 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/21 16:05:18 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:39:21 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <limits.h>
 # include <errno.h>
 
-typedef struct	s_cmd_arg
+typedef struct s_cmd_arg
 {
 	int		n_cmd;
 	char	**cmd_argv;
@@ -34,15 +34,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
-int	ft_printf(const char *src, ...);
+int		ft_printf(const char *src, ...);
 
-char	**path_finder(char ** envp);
+char	**path_finder(char **envp);
 
 void	check_nbargv(int argc);
 void	check_file(char **argv);
 
-int	check_infile(char **argv, int fd[], int n_cmd);
-int	check_outfile(char **argv, int fd[], int n_cmd);
+int		check_infile(char **argv, int fd[], int n_cmd);
+int		check_outfile(char **argv, int fd[], int n_cmd);
 void	child_process(t_cmd_arg cmdlist, char **paths, int fd[], char **envp);
 
 void	exec_cmd(char **paths, char *first_cmd, char **envp, char **flags);

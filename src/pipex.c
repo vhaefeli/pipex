@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:10:30 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 13:32:44 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:12:09 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	char		**paths;
-	int			i;
+	char	**paths;
+	int		i;
 
 	i = 0;
 	paths = path_finder(envp);
