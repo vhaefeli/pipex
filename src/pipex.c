@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:10:30 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 14:12:09 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:52:11 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	char	**paths;
+	char	**cmd_list;
+
 	int		i;
 
 	i = 0;
-	paths = path_finder(envp);
+
 	check_nbargv(argc);
 	check_file(argv);
-	pipex(argv, paths, envp);
-	while (paths[i])
+	cmd_list = check_cmd(argv, envp)
+	pipex(argv, cmd_list, envp);
+	while (cmd_list[i])
 	{
-		free(paths[i]);
+		free(cmd_list[i]);
 		i++;
 	}
-	free(paths);
+	free(cmd_list);
 	return (0);
 }

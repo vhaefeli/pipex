@@ -6,41 +6,11 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:32:32 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 14:34:24 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:09:46 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-void	exec_cmd(char **paths, char *first_cmd, char **envp, char **flags)
-{
-	int		i;
-	char	*cmd;
-
-	i = 0;
-	while (paths[i])
-	{
-		cmd = ft_strjoin(paths[i], first_cmd);
-		execve(cmd, flags, envp);
-		free(cmd);
-		i++;
-	}
-	free(first_cmd);
-}
-
-char	**split_flags(char *cmds)
-{
-	char	**flags;
-
-	if (ft_strnstr(cmds, "awk", 3) == NULL)
-		flags = ft_split(cmds, ' ');
-	else
-	{
-		flags = ft_split(cmds, '\'');
-		flags[0][3] = '\0';
-	}
-	return (flags);
-}
 
 static void	fd_value_exchange(int fd[], int temp_fd[])
 {
@@ -69,7 +39,7 @@ void	pipex(char **argv, char **paths, char **envp)
 		if (pid1 < 0)
 			return (perror("Fork1"));
 		if (pid1 == 0)
-			child_process(cmdlist, paths, fd, envp);
+			child_process(cmdlist, cmd_list, fd, envp);
 		close(fd[1]);
 		cmdlist.n_cmd++;
 	}

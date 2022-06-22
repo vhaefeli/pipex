@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:17:40 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 14:14:47 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:09:50 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	child_process(t_cmd_arg cmdlist, char **paths, int fd[], char **envp)
 		perror("Fork");
 		exit(EXIT_FAILURE);
 	}
-	flags = split_flags(cmdlist.cmd_argv[cmdlist.n_cmd + 1]);
-	cmd = ft_strjoin("/", flags[0]);
+	// flags = split_flags(cmdlist.cmd_argv[cmdlist.n_cmd + 1]);
+	// cmd = ft_strjoin("/", flags[0]);
 	dup2(infile, STDIN_FILENO);
 	dup2(outfile, STDOUT_FILENO);
 	close(fd[0]);
