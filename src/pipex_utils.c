@@ -6,11 +6,34 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:32:32 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 17:09:46 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/27 21:12:49 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+void	check_nbargv(int argc)
+{
+	if (argc < 5)
+	{
+		ft_printf("(Error) Too few arguments\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+void	check_file(char **argv)
+{
+	if (access(argv[1], F_OK) != 0)
+	{
+		ft_printf("(Error) %s : %s \n", strerror(errno), argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	if (access(argv[1], R_OK) != 0)
+	{
+		ft_printf("(Error) %s : %s \n", strerror(errno), argv[1]);
+		exit(EXIT_FAILURE);
+	}
+}
 
 static void	fd_value_exchange(int fd[], int temp_fd[])
 {
@@ -19,31 +42,30 @@ static void	fd_value_exchange(int fd[], int temp_fd[])
 	temp_fd[0] = temp_fd[1];
 }
 
-void	pipex(char **argv, char **paths, char **envp)
+void	pipex(t_list **list_cmds, char **envp)
 {
 	pid_t		pid1;
 	int			fd[2];
-	t_cmd_arg	cmdlist;
 	int			temp_fd[2];
+	int			n_cmd;
 
+	n_cmd = 0;
 	temp_fd[0] = -1;
 	pid1 = -1;
-	cmdlist.cmd_argv = argv;
-	cmdlist.n_cmd = 1;
-	while (argv[cmdlist.n_cmd + 2])
+	while (*list_cmds && ++n_cmd)
 	{
-		if (argv[cmdlist.n_cmd + 3] && pipe(fd) == -1)
-			return (perror("pipe"));
+		if (pipe(fd) == -1 && ft_printf("Pipe %d : ", n_cmd))
+			ft_error(list_cmds, NULL);
 		fd_value_exchange(fd, temp_fd);
 		pid1 = fork();
-		if (pid1 < 0)
-			return (perror("Fork1"));
+		if (pid1 < 0 && ft_printf("Fork %d : ", n_cmd))
+			ft_error(list_cmds, NULL);
 		if (pid1 == 0)
-			child_process(cmdlist, cmd_list, fd, envp);
+			child_process(*list_cmds, fd, envp);
 		close(fd[1]);
-		cmdlist.n_cmd++;
+		*list_cmds = lst_delonecmd(*list_cmds);
 	}
 	close(fd[0]);
-	while (cmdlist.n_cmd--)
+	while (n_cmd--)
 		waitpid(pid1, NULL, 0);
 }

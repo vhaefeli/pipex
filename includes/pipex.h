@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:04 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/22 14:39:21 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:19:33 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,41 @@
 # include <limits.h>
 # include <errno.h>
 
-typedef struct s_cmd_arg
+typedef struct s_list
 {
-	int		n_cmd;
-	char	**cmd_argv;
-}	t_cmd_arg;
+	char			*path_cmd;
+	char			**cmd_with_flags;
+	char			*infile;
+	char			*outfile;
+	struct s_list	*next;
+}	t_list;
 
+size_t	ft_strlen(const char *s);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	**ft_split(const char *s, char c);
 char	*ft_strjoin(const char *s1, const char *s2);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
-int		ft_printf(const char *src, ...);
+char	*ft_strjoin_free_s2(char *s1, char *s2);
+int	ft_printf(const char *src, ...);
 
-char	**path_finder(char **envp);
+void	ft_lstadd_back(t_list **alst, t_list *new);
+t_list	*ft_lstnewcmd(char **path, char *cmd);
+t_list	*lst_delonecmd(t_list *list_cmds);
 
 void	check_nbargv(int argc);
 void	check_file(char **argv);
 
-int		check_infile(char **argv, int fd[], int n_cmd);
-int		check_outfile(char **argv, int fd[], int n_cmd);
-void	child_process(t_cmd_arg cmdlist, char **paths, int fd[], char **envp);
+void    ft_error(t_list **list_cmds, char **path);
 
-void	exec_cmd(char **paths, char *first_cmd, char **envp, char **flags);
-char	**split_flags(char *cmds);
-void	pipex(char **argv, char **paths, char **envp);
+char	**path_finder(char **envp);
+char    *cmd_path(char **path, char *cmd);
+
+char    *cmd_path(char **path, char *cmd);
+
+t_list  **list_cmds(char **argv, char **envp);
+
+void	child_process(t_list *list_cmds, int fd[], char **envp);
+
+void	pipex(t_list **list_cmds, char **envp);
 
 #endif
