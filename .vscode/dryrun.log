@@ -2,7 +2,6 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/vhaefeli/rank02/pipex'
 mkdir -p obj
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_printf.o src/ft_printf.c -I./includes
- 
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_split.o src/ft_split.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strjoin.o src/ft_strjoin.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strlcpy.o src/ft_strlcpy.c -I./includes

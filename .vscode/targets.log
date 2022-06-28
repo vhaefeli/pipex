@@ -8,10 +8,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Jun 28 14:25:35 2022
+# Make data base, printed on Tue Jun 28 16:04:52 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -47,7 +48,7 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 32)
 OBJS = $(patsubst %.c, $(OBJS_DIR)/%.o, $(_SRCS))
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_ph0032nm/T/vscode-ipc-a503609d-fc00-4b7a-bb27-686d0b67d099.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_ph0032nm/T/vscode-ipc-25e7f9b6-068a-41c5-979e-10c8aaf8ca5d.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -161,7 +162,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 30031
+VSCODE_PID = 43899
 # variable set hash-table stats:
 # Load=75/1024=7%, Rehash=0, Collisions=5/115=4%
 
@@ -172,9 +173,9 @@ VSCODE_PID = 30031
 # Directories
 
 # . (device 16777225, inode 2485474): 13 files, no impossibilities.
-# src (device 16777225, inode 2739983): 12 files, no impossibilities so far.
+# src (device 16777225, inode 2739983): 11 files, no impossibilities so far.
 
-# 25 files, no impossibilities in 2 directories.
+# 24 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -190,7 +191,7 @@ obj/%.o: ./src/%.c | ./obj
 obj/ft_strlcpy.o: src/ft_strlcpy.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_strlcpy'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -232,7 +233,7 @@ src/ft_substr.c:
 obj/ft_strnstr.o: src/ft_strnstr.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_strnstr'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -272,15 +273,6 @@ test:
 #  File has not been updated.
 
 # Not a target:
-src/pipex.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-28 14:25:34
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
 src/ft_strnstr.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-22 13:32:44
@@ -292,7 +284,7 @@ src/ft_strnstr.c:
 obj/ft_strlen.o: src/ft_strlen.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_strlen'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -310,12 +302,28 @@ bonus: pipex
 obj/listmanip.o: src/listmanip.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `listmanip'
-#  Last modified 2022-06-28 11:31:52
+#  Last modified 2022-06-28 15:22:17
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/listmanip.o
+# automatic
+# % := 
+# automatic
+# * := listmanip
+# automatic
+# + := src/listmanip.c
+# automatic
+# | := obj
+# automatic
+# < := src/listmanip.c
+# automatic
+# ^ := src/listmanip.c
+# automatic
+# ? := src/listmanip.c
 # variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
  
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 52):
 	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
 	
@@ -340,7 +348,7 @@ norminette:
 
 obj:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-28 11:31:52
+#  Last modified 2022-06-28 15:54:28
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 49):
@@ -350,7 +358,7 @@ obj:
 obj/ft_strjoin.o: src/ft_strjoin.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_strjoin'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -362,7 +370,7 @@ obj/ft_strjoin.o: src/ft_strjoin.c | obj
 obj/ft_split.o: src/ft_split.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_split'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -374,7 +382,7 @@ obj/ft_split.o: src/ft_split.c | obj
 obj/ft_printf.o: src/ft_printf.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_printf'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -392,7 +400,7 @@ obj/ft_printf.o: src/ft_printf.c | obj
 obj/list_cmd.o: src/list_cmd.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `list_cmd'
-#  Last modified 2022-06-28 11:21:25
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -429,7 +437,7 @@ src/ft_strlen.c:
 # Not a target:
 src/listmanip.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 11:31:41
+#  Last modified 2022-06-28 16:04:52
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -468,38 +476,16 @@ src/ft_printf.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-obj/pipex.o: src/pipex.c | obj
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `pipex'
-#  Last modified 2022-06-28 10:58:00
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/pipex.o
-# automatic
-# % := 
-# automatic
-# * := pipex
-# automatic
-# + := src/pipex.c
-# automatic
-# | := obj
-# automatic
-# < := src/pipex.c
-# automatic
-# ^ := src/pipex.c
-# automatic
-# ? := src/pipex.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
-#  commands to execute (from `Makefile', line 52):
-	$(CC) -c $(CFLAGS) -o $@ $^ $(INCLUDES)
-	
+# Not a target:
+obj/pipex.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/list_cmd.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 11:21:03
+#  Last modified 2022-06-28 15:18:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -508,7 +494,7 @@ src/list_cmd.c:
 obj/ft_substr.o: src/ft_substr.c | obj
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_substr'
-#  Last modified 2022-06-28 10:58:00
+#  Last modified 2022-06-28 15:19:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -519,7 +505,7 @@ obj/ft_substr.o: src/ft_substr.c | obj
 
 pipex: obj/ft_printf.o obj/ft_split.o obj/ft_strjoin.o obj/ft_strlcpy.o obj/ft_strlen.o obj/ft_strnstr.o obj/ft_substr.o obj/list_cmd.o obj/listmanip.o obj/pipex.o obj/pipex_children_process.o obj/pipex_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-28 11:31:53
+#  Last modified 2022-06-28 15:54:28
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -529,7 +515,7 @@ pipex: obj/ft_printf.o obj/ft_split.o obj/ft_strjoin.o obj/ft_strlcpy.o obj/ft_s
 	
 
 # files hash-table stats:
-# Load=35/1024=3%, Rehash=0, Collisions=5/122=4%
+# Load=34/1024=3%, Rehash=0, Collisions=2/116=2%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -541,6 +527,6 @@ pipex: obj/ft_printf.o obj/ft_split.o obj/ft_strjoin.o obj/ft_strlcpy.o obj/ft_s
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 28 14:25:35 2022
+# Finished Make data base on Tue Jun 28 16:04:52 2022
 
  

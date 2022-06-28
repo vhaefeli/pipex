@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:04 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 09:22:45 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:47:17 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,24 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strjoin_free_s2(char *s1, char *s2);
 int	ft_printf(const char *src, ...);
 
-void	ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstadd_back(t_list *alst, t_list *new);
 t_list	*ft_lstnewcmd(char **path, char *cmd);
-t_list	*lst_delonecmd(t_list **list_cmds);
+t_list	*lst_delonecmd(t_list *list_cmds);
 
 void	check_nbargv(int argc);
 void	check_file(char **argv);
 
-void    ft_error(t_list **list_cmds, char **path);
+void	ft_error(t_list *list_cmds, char **path);
 
 char	**path_finder(char **envp);
-char    *cmd_path(char **path, char *cmd);
+char	*cmd_path(char **path, char *cmd);
 
-char    *cmd_path(char **path, char *cmd);
+char	 *cmd_path(char **path, char *cmd);
 
-t_list  **list_cmds(char **argv, char **envp);
+t_list	*list_cmds(char **argv, char **envp);
 
 void	child_process(t_list *list_cmds, int fd[], char **envp);
 
-void	pipex(t_list **list_cmds, char **envp);
+void	pipex(t_list **first_cmd, char **envp);
 
 #endif
