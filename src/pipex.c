@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:10:30 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 09:22:45 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/28 14:25:34 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int argc, char **argv, char **envp)
 	check_nbargv(argc);
 	check_file(argv);
 	cmd_list = list_cmds(argv, envp);
-
 	if (cmd_list == NULL)
 	{
 		ft_printf("error with cmds listing");

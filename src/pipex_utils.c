@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:32:32 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 09:22:45 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:49:15 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ void	pipex(t_list **list_cmds, char **envp)
 		if (pid1 == 0)
 			child_process(*list_cmds, fd, envp);
 		close(fd[1]);
+		ft_printf("avant del %d", n_cmd);
 		*list_cmds = lst_delonecmd(list_cmds);
+		ft_printf("apres del %d", n_cmd);
 	}
 	close(fd[0]);
 	while (n_cmd--)

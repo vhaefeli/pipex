@@ -1,18 +1,19 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/vhaefeli/rank02/pipex'
 mkdir -p obj
+cc -c -Wall -Wextra -Werror -g  -o obj/ft_printf.o src/ft_printf.c -I./includes
+ 
+cc -c -Wall -Wextra -Werror -g  -o obj/ft_split.o src/ft_split.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strjoin.o src/ft_strjoin.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strlcpy.o src/ft_strlcpy.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strlen.o src/ft_strlen.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strnstr.o src/ft_strnstr.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_substr.o src/ft_substr.c -I./includes
-cc -c -Wall -Wextra -Werror -g  -o obj/ft_split.o src/ft_split.c -I./includes
-cc -c -Wall -Wextra -Werror -g  -o obj/ft_printf.o src/ft_printf.c -I./includes
-cc -c -Wall -Wextra -Werror -g  -o obj/path_finder.o src/path_finder.c -I./includes
-cc -c -Wall -Wextra -Werror -g  -o obj/pipex_checkarg.o src/pipex_checkarg.c -I./includes
+cc -c -Wall -Wextra -Werror -g  -o obj/list_cmd.o src/list_cmd.c -I./includes
+cc -c -Wall -Wextra -Werror -g  -o obj/listmanip.o src/listmanip.c -I./includes
+cc -c -Wall -Wextra -Werror -g  -o obj/pipex.o src/pipex.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/pipex_children_process.o src/pipex_children_process.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/pipex_utils.o src/pipex_utils.c -I./includes
-cc -c -Wall -Wextra -Werror -g  -o obj/pipex.o src/pipex.c -I./includes
-cc -Wall -Wextra -Werror -g   ./obj/ft_strjoin.o  ./obj/ft_strlcpy.o  ./obj/ft_strlen.o  ./obj/ft_strnstr.o  ./obj/ft_substr.o  ./obj/ft_split.o  ./obj/ft_printf.o  ./obj/path_finder.o  ./obj/pipex_checkarg.o  ./obj/pipex_children_process.o  ./obj/pipex_utils.o  ./obj/pipex.o -o pipex -I./includes
+cc -Wall -Wextra -Werror -g   ./obj/ft_printf.o  ./obj/ft_split.o  ./obj/ft_strjoin.o  ./obj/ft_strlcpy.o  ./obj/ft_strlen.o  ./obj/ft_strnstr.o  ./obj/ft_substr.o  ./obj/list_cmd.o  ./obj/listmanip.o  ./obj/pipex.o  ./obj/pipex_children_process.o  ./obj/pipex_utils.o -o pipex -I./includes
 make: Leaving directory `/Users/vhaefeli/rank02/pipex'
  

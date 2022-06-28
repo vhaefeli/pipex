@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   list_cmd.c										 :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: vhaefeli <vhaefeli@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2022/06/24 13:22:11 by vhaefeli		  #+#	#+#			 */
-/*   Updated: 2022/06/27 21:12:43 by vhaefeli		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_cmd.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/24 13:22:11 by vhaefeli          #+#    #+#             */
+/*   Updated: 2022/06/28 14:29:02 by vhaefeli         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
@@ -61,13 +61,15 @@ void	ft_error(t_list **list_cmds, char **path)
 	int i;
 
 	i = 0;
-
+	ft_printf("free cmdflag %s\n", (*list_cmds)->cmd_with_flags[0]);
+	ft_printf("error\n");
 	while(*list_cmds)
 	{
 		lst_delonecmd(list_cmds);
 		*list_cmds = (*list_cmds)->next;
 	}
-	free(list_cmds);
+	if (list_cmds)
+		free(list_cmds);
 	if (path)
 	{
 		while (path[i])
@@ -80,26 +82,26 @@ void	ft_error(t_list **list_cmds, char **path)
 	exit(EXIT_FAILURE);
 }
 
-t_list  **list_cmds(char **argv, char **envp)
+t_list	**list_cmds(char **argv, char **envp)
 {
-	t_list  *new_cmd;
-	t_list  **first_cmd;
-	int	 i;
+	t_list	*new_cmd;
+	t_list	**first_cmd;
+	int	i;
 	char	**path;
 
 	first_cmd = malloc(sizeof(**first_cmd));
 	path = path_finder(envp);
 	*first_cmd = ft_lstnewcmd(path, argv[2]);
-	if (first_cmd == NULL && ft_printf("commande not found : %s\n", first_cmd->cmd_with_flags[0]))
+	if (first_cmd == NULL && ft_printf("commande not found : %s\n", (*first_cmd)->cmd_with_flags[0]))
 			ft_error(first_cmd, path);
 	(*first_cmd)->infile = argv[1];
 	i = 3;
 	while (argv[i + 1])
 	{
 		new_cmd = ft_lstnewcmd(path, argv[i]);
-		if (new_cmd == NULL && ft_printf("commande not found : %s\n", new_cmd->cmd_with_flags[0]))
+		if (new_cmd == NULL && ft_printf("commande not found"))
 			ft_error(first_cmd, path);
-		ft_lstadd_back(first_cmd, new_cmd); 
+		ft_lstadd_back(first_cmd, new_cmd);
 		i++;
 	}
 	new_cmd->outfile = argv[i];
@@ -109,34 +111,3 @@ t_list  **list_cmds(char **argv, char **envp)
 	free(path);
 	return (first_cmd);
 }
-
-
-// char	**cmds_finder_pipex(const char **argv, char **envp)
-// {
-//	 char	**path;
-//	 char	full_cmds[][];
-//	 int	 i;
-
-//	 path = path_finder(envp);
-//	 i = 2;
-//	 while (argv[i + 2])
-//	 {
-//		 full_cmds[i - 2] = ft_split(argv[i], ' ');
-//		 i++;
-//	 }
-//	 i = 0;
-//	 while (full_cmd[i])
-//	 {
-//		 full_cmd[i][0] = cmd_path(path, full_cmds[i][0]);
-//		 if (full_cmd[i][0] == NULL)
-//			 ft_error_cmd(&full_cmds, &path);
-//		 i++;
-//	 }
-//	 full_cmds[i] = NULL;
-//	 while (paths[i])
-// 	{
-// 		free(paths[i]);
-// 		i++;
-// 	}
-//	 free(path);
-// }
