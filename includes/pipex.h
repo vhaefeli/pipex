@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:04 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/27 22:19:33 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/28 09:22:45 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_printf(const char *src, ...);
 
 void	ft_lstadd_back(t_list **alst, t_list *new);
 t_list	*ft_lstnewcmd(char **path, char *cmd);
-t_list	*lst_delonecmd(t_list *list_cmds);
+t_list	*lst_delonecmd(t_list **list_cmds);
 
 void	check_nbargv(int argc);
 void	check_file(char **argv);

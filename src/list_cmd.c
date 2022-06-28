@@ -64,7 +64,7 @@ void	ft_error(t_list **list_cmds, char **path)
 
 	while(*list_cmds)
 	{
-		lst_delonecmd(*list_cmds);
+		lst_delonecmd(list_cmds);
 		*list_cmds = (*list_cmds)->next;
 	}
 	free(list_cmds);
@@ -89,22 +89,19 @@ t_list  **list_cmds(char **argv, char **envp)
 
 	first_cmd = malloc(sizeof(**first_cmd));
 	path = path_finder(envp);
-    // ft_printf("1");
 	*first_cmd = ft_lstnewcmd(path, argv[2]);
-    ft_printf("2");
+	if (first_cmd == NULL && ft_printf("commande not found : %s\n", first_cmd->cmd_with_flags[0]))
+			ft_error(first_cmd, path);
 	(*first_cmd)->infile = argv[1];
 	i = 3;
 	while (argv[i + 1])
 	{
-        ft_printf("3");
 		new_cmd = ft_lstnewcmd(path, argv[i]);
 		if (new_cmd == NULL && ft_printf("commande not found : %s\n", new_cmd->cmd_with_flags[0]))
 			ft_error(first_cmd, path);
 		ft_lstadd_back(first_cmd, new_cmd); 
 		i++;
-        ft_printf("4");
 	}
-    free(first_cmd);
 	new_cmd->outfile = argv[i];
 	i = 0;
 	while (path[i])

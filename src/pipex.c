@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:10:30 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/27 23:58:17 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/28 09:22:45 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ int	main(int argc, char **argv, char **envp)
 	check_nbargv(argc);
 	check_file(argv);
 	cmd_list = list_cmds(argv, envp);
-	ft_printf("list done");
+
 	if (cmd_list == NULL)
 	{
 		ft_printf("error with cmds listing");
 		return (1);
 	}
 	pipex(cmd_list, envp);
+	ft_printf("check\n");
 	free(cmd_list);
 //	lst_del(cmd_list);
 	return (0);
