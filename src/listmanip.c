@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:04:13 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 16:04:52 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:34:10 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,16 @@ t_list	*ft_lstnewcmd(char **path, char *cmd)
 {
 	t_list	*list;
 
-	int		i = 0;
 	list = malloc(sizeof(*list));
 	if (!list)
 		return (NULL);
 	list->cmd_with_flags = ft_split(cmd, ' ');
-	while (list->cmd_with_flags[i])
-		ft_printf("cmd:%s\n", list->cmd_with_flags[i++]);
 	list->path_cmd = cmd_path(path, list->cmd_with_flags[0]);
-	ft_printf("path:%s\n", list->path_cmd);
 	if (list->path_cmd == NULL)
-		return (NULL);
+	{
+		ft_printf("error: command not found: %s\n", list->cmd_with_flags[0]);
+		return ((t_list*)NULL);
+	}
 	list->infile = NULL;
 	list->outfile = NULL;
 	list->next = NULL;
@@ -62,22 +61,16 @@ t_list	*lst_delonecmd(t_list *list_cmds)
 
 	i = 0;
 	next_cmd = list_cmds->next;
-	ft_printf("\n A.cmdflag %s\n", list_cmds->cmd_with_flags[i]);
-	ft_printf("\n(*list_cmds)->path_cmd: %s\n", list_cmds->path_cmd);
 	free(list_cmds->path_cmd);
 	list_cmds->path_cmd = NULL;
 	while(list_cmds->cmd_with_flags[i])
 	{
-		ft_printf("free cmdflag %s\n", list_cmds->cmd_with_flags[i]);
 		free(list_cmds->cmd_with_flags[i]);
 		list_cmds->cmd_with_flags[i] = NULL;
 		i++;
 	}
-	ft_printf("3\n");
 	free(list_cmds->cmd_with_flags);
 	list_cmds->cmd_with_flags = NULL;
-	ft_printf("4\n");
 	free (list_cmds);
-	ft_printf("5\n");
 	return (next_cmd);
 }
