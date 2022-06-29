@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 17:10:30 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 22:02:39 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:32:14 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	main(int argc, char **argv, char **envp)
 		return (1);
 	}
 	pipex(&cmd_list, envp);
-//	free(cmd_list);
+	free(cmd_list);
 	return (0);
 }

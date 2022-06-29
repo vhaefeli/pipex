@@ -1,6 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/vhaefeli/rank02/pipex'
 mkdir -p obj
+ 
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_printf.o src/ft_printf.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_split.o src/ft_split.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strjoin.o src/ft_strjoin.c -I./includes
@@ -9,6 +10,7 @@ cc -c -Wall -Wextra -Werror -g  -o obj/ft_strlen.o src/ft_strlen.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_strnstr.o src/ft_strnstr.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/ft_substr.o src/ft_substr.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/list_cmd.o src/list_cmd.c -I./includes
+ 
 cc -c -Wall -Wextra -Werror -g  -o obj/listmanip.o src/listmanip.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/pipex.o src/pipex.c -I./includes
 cc -c -Wall -Wextra -Werror -g  -o obj/pipex_children_process.o src/pipex_children_process.c -I./includes

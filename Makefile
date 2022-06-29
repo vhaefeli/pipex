@@ -6,11 +6,11 @@
 #    By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 13:10:08 by vhaefeli          #+#    #+#              #
-#    Updated: 2022/06/28 22:02:07 by vhaefeli         ###   ########.fr        #
+#    Updated: 2022/06/29 13:54:58 by vhaefeli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS 			= -Wall -Wextra -Werror -g -fsanitize=address -fno-omit-frame-pointer
+CFLAGS 			= -Wall -Wextra -Werror -g #-fsanitize=address -fno-omit-frame-pointer
 TARGET 			= pipex
 SRCS_DIR 		= ./src
 OBJS_DIR 		= ./obj
@@ -58,7 +58,7 @@ $(TARGET): $(OBJS)
 bonus: $(TARGET)
 
 norminette:
-	@norminette $(SRCS_DIR)
+	@norminette $(SRCS_DIR) $(INCLUDES_DIRS)
 
 
 

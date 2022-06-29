@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:22:11 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 21:28:58 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:53:32 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**path_finder(char **envp)
 char	*cmd_path(char **path, char *cmd)
 {
 	char	*temp_cmd;
-	int	 i;
+	int		i;
 
 	i = 0;
 	while (path[i])
@@ -43,7 +43,7 @@ char	*cmd_path(char **path, char *cmd)
 		temp_cmd = ft_strjoin("/", cmd);
 		temp_cmd = ft_strjoin_free_s2(path[i], temp_cmd);
 		if (access(temp_cmd, F_OK) == 0)
-			return(temp_cmd);
+			return (temp_cmd);
 		else
 		{
 			free(temp_cmd);
@@ -55,13 +55,12 @@ char	*cmd_path(char **path, char *cmd)
 
 void	ft_error(t_list *list_cmds, char **path)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(list_cmds)
+	while (list_cmds)
 	{
-		lst_delonecmd(list_cmds);
-		list_cmds = (list_cmds)->next;
+		list_cmds = lst_delonecmd(list_cmds);
 	}
 	if (list_cmds)
 		free(list_cmds);
@@ -81,7 +80,7 @@ t_list	*list_cmds(char **argv, char **envp)
 {
 	t_list	*new_cmd;
 	t_list	*first_cmd;
-	int	i;
+	int		i;
 	char	**path;
 
 	path = path_finder(envp);

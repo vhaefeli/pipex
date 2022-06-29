@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:04 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 15:47:17 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:50:54 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	**ft_split(const char *s, char c);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strjoin_free_s2(char *s1, char *s2);
-int	ft_printf(const char *src, ...);
+int		ft_printf(const char *src, ...);
 
 void	ft_lstadd_back(t_list *alst, t_list *new);
 t_list	*ft_lstnewcmd(char **path, char *cmd);
@@ -51,7 +51,7 @@ void	ft_error(t_list *list_cmds, char **path);
 char	**path_finder(char **envp);
 char	*cmd_path(char **path, char *cmd);
 
-char	 *cmd_path(char **path, char *cmd);
+char	*cmd_path(char **path, char *cmd);
 
 t_list	*list_cmds(char **argv, char **envp);
 

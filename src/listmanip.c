@@ -6,7 +6,7 @@
 /*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:04:13 by vhaefeli          #+#    #+#             */
-/*   Updated: 2022/06/28 21:34:10 by vhaefeli         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:54:11 by vhaefeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ void	ft_lstadd_back(t_list *firstcmd, t_list *new)
 t_list	*ft_lstnewcmd(char **path, char *cmd)
 {
 	t_list	*list;
+	int		i;
 
+	i = 0;
 	list = malloc(sizeof(*list));
 	if (!list)
 		return (NULL);
@@ -46,7 +48,14 @@ t_list	*ft_lstnewcmd(char **path, char *cmd)
 	if (list->path_cmd == NULL)
 	{
 		ft_printf("error: command not found: %s\n", list->cmd_with_flags[0]);
-		return ((t_list*)NULL);
+		while (list->cmd_with_flags[i])
+		{
+			free(list->cmd_with_flags[i]);
+			list->cmd_with_flags[i++] = NULL;
+		}
+		free(list->cmd_with_flags);
+		free(list);
+		return (NULL);
 	}
 	list->infile = NULL;
 	list->outfile = NULL;
@@ -56,14 +65,14 @@ t_list	*ft_lstnewcmd(char **path, char *cmd)
 
 t_list	*lst_delonecmd(t_list *list_cmds)
 {
-	int	i;
+	int		i;
 	t_list	*next_cmd;
 
 	i = 0;
 	next_cmd = list_cmds->next;
 	free(list_cmds->path_cmd);
 	list_cmds->path_cmd = NULL;
-	while(list_cmds->cmd_with_flags[i])
+	while (list_cmds->cmd_with_flags[i])
 	{
 		free(list_cmds->cmd_with_flags[i]);
 		list_cmds->cmd_with_flags[i] = NULL;

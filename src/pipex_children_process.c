@@ -31,7 +31,7 @@ static int	check_outfile(char *cmd_outfile, int fd[])
 		outfile = open(cmd_outfile, O_CREAT | O_RDWR | O_TRUNC, 0644);
 		if (access(cmd_outfile, W_OK) != 0)
 		{
-			ft_printf("(Error) %s : %s \n", strerror(errno), outfile);
+			ft_printf("(Error) %s : %s \n", strerror(errno), cmd_outfile);
 			exit(EXIT_FAILURE);
 		}
 		return (outfile);
@@ -56,7 +56,9 @@ void	child_process(t_list *list_cmds, int fd[], char **envp)
 	}
 	dup2(infile, STDIN_FILENO);
 	dup2(outfile, STDOUT_FILENO);
-	close(fd[0]);
-	close(fd[1]);
+	if (fd[0] > -1)
+		close(fd[0]);
+	if (fd[1] > -1)
+		close(fd[1]);
 	execve(list_cmds->path_cmd, list_cmds->cmd_with_flags, envp);
 }
