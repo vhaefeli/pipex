@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			  */
-/*														:::	  ::::::::   */
-/*   pipex_children_process.c						   :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: vhaefeli <vhaefeli@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2022/06/20 15:17:40 by vhaefeli		  #+#	#+#			 */
-/*   Updated: 2022/06/27 21:11:39 by vhaefeli		 ###   ########.fr	   */
-/*																		   	*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_children_process.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vhaefeli <vhaefeli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/20 15:17:40 by vhaefeli          #+#    #+#             */
+/*   Updated: 2022/06/29 21:51:51 by vhaefeli         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
@@ -24,17 +24,9 @@ static int	check_infile(char *cmd_infile, int fd[])
 
 static int	check_outfile(char *cmd_outfile, int fd[])
 {
-	int	outfile;
-
 	if (cmd_outfile != NULL)
 	{
-		outfile = open(cmd_outfile, O_CREAT | O_RDWR | O_TRUNC, 0644);
-		if (access(cmd_outfile, W_OK) != 0)
-		{
-			ft_printf("(Error) %s : %s \n", strerror(errno), cmd_outfile);
-			exit(EXIT_FAILURE);
-		}
-		return (outfile);
+		return (open(cmd_outfile, O_WRONLY | O_TRUNC));
 	}
 	else
 		return (fd[1]);
